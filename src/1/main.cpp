@@ -8,17 +8,18 @@ using namespace std;
 
 class Main1 {
 public:
-  static int startFirst() {
+  static int main() {
+    printw("--- #1 ---");
+    
     list<Elf *> elves;
-    printw("Type p or ctrl+c to quit!");
-
     ifstream file;
+    string content;
+
     try {
-      file.open("../assets/assets.txt");
+      file.open("../assets/1.txt");
     } catch (exception &exp) {
       printw("Failed to load file...");
     }
-    string content;
 
     // Read input file
     if (file.is_open()) {
@@ -76,10 +77,9 @@ public:
       int sum = masterChief->getTotalCalories() +
                 masterChief2->getTotalCalories() +
                 masterChief3->getTotalCalories();
+      printw("Sum: ");
       printw(to_string(sum).c_str());
     } while ((ch = getch()) != 'q');
-
-    endwin();
     return 0;
   }
 };
