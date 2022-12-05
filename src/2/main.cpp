@@ -37,7 +37,7 @@ public:
     
     char ch;
     do {
-      
+
     } while ((ch = getch()) != 'q');
     return 0;
   }
